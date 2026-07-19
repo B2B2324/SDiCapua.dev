@@ -19,8 +19,8 @@ export default function About() {
       <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
         <SectionHeading eyebrow="About" title="Why CRE + AI" />
 
-        <div className="grid gap-12 md:grid-cols-[1.6fr_1fr]">
-          <div className="space-y-5 text-sm leading-relaxed text-zinc-400 sm:text-base">
+        <div className="grid gap-14 md:grid-cols-[1.65fr_1fr]">
+          <div className="space-y-5 text-[15px] leading-relaxed text-muted sm:text-base">
             <p>
               Commercial real estate runs on relationships, local knowledge, and
               a staggering amount of manual work — sourcing, underwriting,
@@ -44,26 +44,26 @@ export default function About() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-sm font-semibold text-zinc-200">
+            <h3 className="mb-5 text-[11px] font-medium uppercase tracking-[0.22em] text-accent">
               Toolkit
             </h3>
-            <ul className="flex flex-wrap gap-2">
+            <ul className="space-y-2.5">
               {skills.map((skill) => (
                 <li
                   key={skill}
-                  className="rounded-full border border-border-subtle bg-surface px-3 py-1 text-xs text-zinc-400"
+                  className="border-b border-border-subtle/70 pb-2.5 text-[13px] tracking-wide text-[#c9c5bc] last:border-0"
                 >
                   {skill}
                 </li>
               ))}
             </ul>
 
-            <h3 className="mb-4 mt-10 text-sm font-semibold text-zinc-200">
+            <h3 className="mb-3 mt-12 text-[11px] font-medium uppercase tracking-[0.22em] text-accent">
               Contact
             </h3>
             <a
               href="mailto:Sdicap970@icloud.com"
-              className="text-sm text-accent underline-offset-4 hover:underline"
+              className="text-sm text-[#c9c5bc] underline decoration-accent/40 underline-offset-4 transition-colors hover:text-accent"
             >
               Sdicap970@icloud.com
             </a>

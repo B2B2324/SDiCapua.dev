@@ -34,62 +34,61 @@ export default function Experience() {
           description="Real estate taught me how businesses actually operate. Engineering lets me automate the parts that shouldn't need a human."
         />
 
-        <ol className="relative space-y-10 border-l border-border-subtle pl-8">
+        <ol className="relative space-y-12 border-l border-border-subtle pl-8">
           {experience.map((item) => (
             <li key={item.role} className="relative">
               <span
                 aria-hidden
-                className="absolute -left-[37px] top-1.5 h-2.5 w-2.5 rounded-full border-2 border-background bg-accent"
+                className="absolute -left-[37px] top-2 h-2 w-2 rounded-full bg-accent"
               />
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                <h3 className="text-base font-semibold text-zinc-100">
+                <h3 className="font-serif text-lg tracking-tight text-ink">
                   {item.role}
                 </h3>
-                <span className="text-sm text-zinc-500">{item.org}</span>
+                <span className="text-sm text-faint">{item.org}</span>
               </div>
-              <p className="mt-0.5 text-xs font-medium uppercase tracking-wider text-zinc-600">
+              <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.18em] text-faint">
                 {item.period}
               </p>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-400">
+              <p className="mt-3 max-w-2xl text-[15px] leading-relaxed text-muted">
                 {item.summary}
               </p>
             </li>
           ))}
         </ol>
 
-        {/* Education */}
-        <div className="mt-14 rounded-2xl border border-border-subtle bg-surface p-6 sm:p-7">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-accent">
+        <div className="mt-16 border-t border-border-subtle pt-10">
+          <p className="mb-8 text-[11px] font-medium uppercase tracking-[0.22em] text-accent">
             Education
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div>
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                <h3 className="text-base font-semibold text-zinc-100">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+                <h3 className="font-serif text-lg tracking-tight text-ink">
                   Master of Science in Artificial Intelligence Engineering
                   (MSAIE)
                 </h3>
-                <span className="rounded-full border border-border-subtle px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-zinc-500">
+                <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-faint">
                   Aug 2026 — 13 months
                 </span>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+              <p className="mt-2 max-w-2xl text-[15px] leading-relaxed text-muted">
                 Currently enrolled. Formalizing the engineering foundations
                 behind the agent systems I already build and ship.
               </p>
             </div>
 
-            <div className="border-t border-border-subtle pt-6">
-              <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
-                <h3 className="text-base font-semibold text-zinc-100">
+            <div className="border-t border-border-subtle pt-8">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
+                <h3 className="font-serif text-lg tracking-tight text-ink">
                   B.A. in Economics, Minor in Real Estate
                 </h3>
-                <span className="rounded-full border border-border-subtle px-2.5 py-0.5 text-[11px] font-medium uppercase tracking-wider text-zinc-500">
+                <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-faint">
                   Class of 2014
                 </span>
               </div>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+              <p className="mt-2 text-[15px] leading-relaxed text-muted">
                 University of Connecticut.
               </p>
             </div>

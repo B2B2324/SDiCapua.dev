@@ -43,17 +43,16 @@ export default function Contact() {
           description="Open to AI Product Manager and Agentic Product roles — bringing hands-on experience designing, shipping, and validating multi-agent systems in production."
         />
 
-        <div className="flex items-center gap-2.5 rounded-full border border-accent/25 bg-accent/[0.08] px-4 py-2 text-sm font-medium text-zinc-200 w-fit">
+        <div className="mb-12 flex items-center gap-3 text-sm text-[#c9c5bc]">
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-60" />
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-50" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
           </span>
           Available for AI Product Manager &amp; Agentic Product roles
         </div>
 
-        <div className="mt-10 grid gap-5 md:grid-cols-[1.4fr_1fr]">
-          {/* Contact methods */}
-          <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16">
+          <div className="grid gap-0 border-t border-border-subtle sm:grid-cols-2">
             {contactMethods.map((method) => (
               <a
                 key={method.label}
@@ -61,24 +60,23 @@ export default function Contact() {
                 {...("external" in method && method.external
                   ? { target: "_blank", rel: "noopener noreferrer" }
                   : {})}
-                className="group rounded-2xl border border-border-subtle bg-surface p-5 transition-colors hover:border-accent/30"
+                className="group border-b border-border-subtle py-5 pr-6 transition-colors sm:odd:border-r sm:odd:pr-8 sm:even:pl-8"
               >
-                <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+                <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-faint">
                   {method.label}
                 </p>
-                <p className="mt-1.5 text-sm font-medium text-zinc-200 transition-colors group-hover:text-accent">
+                <p className="mt-2 text-sm font-medium text-ink transition-colors duration-300 group-hover:text-accent">
                   {method.value}
                 </p>
               </a>
             ))}
           </div>
 
-          {/* Live products */}
-          <div className="rounded-2xl border border-border-subtle bg-surface p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-zinc-500">
+          <div className="border-t border-border-subtle pt-6">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-faint">
               See the work live
             </p>
-            <ul className="mt-4 space-y-4">
+            <ul className="mt-5 space-y-5">
               {products.map((product) => (
                 <li key={product.name}>
                   <a
@@ -88,16 +86,16 @@ export default function Contact() {
                     className="group flex items-center justify-between gap-3"
                   >
                     <span>
-                      <span className="block text-sm font-medium text-zinc-200 transition-colors group-hover:text-accent">
+                      <span className="block font-serif text-lg tracking-tight text-ink transition-colors duration-300 group-hover:text-accent">
                         {product.name}
                       </span>
-                      <span className="block text-xs text-zinc-500">
+                      <span className="mt-0.5 block text-xs text-faint">
                         {product.description}
                       </span>
                     </span>
                     <svg
                       aria-hidden
-                      className="h-4 w-4 shrink-0 text-zinc-600 transition-colors group-hover:text-accent"
+                      className="h-4 w-4 shrink-0 text-faint transition-colors duration-300 group-hover:text-accent"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth={1.5}

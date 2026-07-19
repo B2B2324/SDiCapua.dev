@@ -139,92 +139,72 @@ export default function Projects() {
           description="A multi-agent platform, the live product validating it, and the interoperability layer connecting them — designed, built, and deployed end to end."
         />
 
-        {/* Featured projects */}
-        <div className="space-y-8">
+        <div className="space-y-16 md:space-y-20">
           {featured.map((project) => (
-            <article
-              key={project.name}
-              className="relative overflow-hidden rounded-2xl border border-border-subtle bg-surface transition-colors hover:border-accent/30"
-            >
-              {/* Top accent line */}
+            <article key={project.name} className="relative">
               <div
                 aria-hidden
-                className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent/60 to-transparent"
+                className="mb-8 h-px w-full bg-gradient-to-r from-accent/50 via-border-subtle to-transparent"
               />
 
               <div
-                className={`p-7 sm:p-9 ${
-                  project.image ? "lg:grid lg:grid-cols-[1fr_280px] lg:gap-10" : ""
-                }`}
+                className={
+                  project.image
+                    ? "lg:grid lg:grid-cols-[1fr_260px] lg:gap-12 lg:items-start"
+                    : ""
+                }
               >
                 <div>
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="text-xl font-semibold tracking-tight text-zinc-50 sm:text-2xl">
+                  <div className="flex flex-wrap items-baseline gap-x-4 gap-y-2">
+                    <h3 className="font-serif text-2xl tracking-tight text-ink sm:text-3xl">
                       {project.name}
                     </h3>
-                    <span className="rounded-full border border-accent/30 bg-accent/10 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-accent">
+                    <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                       {project.badge}
                     </span>
                     {project.stat && (
-                      <span className="rounded-full border border-border-subtle bg-background/60 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-zinc-400">
+                      <span className="text-[11px] font-medium uppercase tracking-[0.14em] text-faint">
                         {project.stat}
                       </span>
                     )}
                   </div>
 
-                  <p className="mt-2 text-sm font-medium text-zinc-300 sm:text-base">
+                  <p className="mt-3 text-[15px] font-medium leading-snug text-[#c9c5bc] sm:text-base">
                     {project.tagline}
                   </p>
 
-                  <p className="mt-4 max-w-3xl text-sm leading-relaxed text-zinc-400 sm:text-[15px]">
+                  <p className="mt-5 max-w-3xl text-[15px] leading-relaxed text-muted">
                     {project.description}
                   </p>
 
                   <dl
-                    className={`mt-7 grid gap-5 ${
+                    className={`mt-10 grid gap-x-8 gap-y-8 border-t border-border-subtle pt-8 ${
                       project.features.length === 4
                         ? "sm:grid-cols-2"
                         : "sm:grid-cols-3"
                     }`}
                   >
                     {project.features.map((feature) => (
-                      <div
-                        key={feature.label}
-                        className="rounded-xl border border-border-subtle/70 bg-background/50 p-4"
-                      >
-                        <dt className="text-xs font-semibold uppercase tracking-wider text-accent/80">
+                      <div key={feature.label}>
+                        <dt className="text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                           {feature.label}
                         </dt>
-                        <dd className="mt-2 text-[13px] leading-relaxed text-zinc-400">
+                        <dd className="mt-2.5 text-[13px] leading-relaxed text-muted">
                           {feature.detail}
                         </dd>
                       </div>
                     ))}
                   </dl>
 
-                  <p className="mt-6 flex items-start gap-2.5 rounded-xl border border-accent/15 bg-accent/[0.06] px-4 py-3 text-[13px] leading-relaxed text-zinc-300">
-                    <svg
-                      aria-hidden
-                      className="mt-0.5 h-4 w-4 shrink-0 text-accent"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    <span>{project.highlight}</span>
+                  <p className="mt-8 border-l border-accent/40 pl-4 text-[13px] leading-relaxed text-[#c9c5bc]">
+                    {project.highlight}
                   </p>
 
-                  <ul className="mt-6 flex flex-wrap gap-2">
+                  <ul className="mt-7 flex flex-wrap gap-x-3 gap-y-2">
                     {project.stack.map((tech) => (
                       <li
                         key={tech}
-                        className="rounded-full border border-border-subtle px-2.5 py-0.5 text-xs text-zinc-500"
+                        className="text-[12px] tracking-wide text-faint"
                       >
                         {tech}
                       </li>
@@ -233,18 +213,18 @@ export default function Projects() {
                 </div>
 
                 {project.image && (
-                  <figure className="mt-8 lg:mt-0">
-                    <div className="overflow-hidden rounded-xl border border-border-subtle">
+                  <figure className="mt-10 lg:mt-0">
+                    <div className="overflow-hidden border border-border-subtle">
                       <Image
                         src={project.image.src}
                         alt={project.image.alt}
                         width={project.image.width}
                         height={project.image.height}
-                        className="h-auto w-full max-w-sm lg:max-w-none"
-                        sizes="(min-width: 1024px) 280px, 100vw"
+                        className="h-auto w-full max-w-sm transition-transform duration-700 ease-out hover:scale-[1.02] lg:max-w-none"
+                        sizes="(min-width: 1024px) 260px, 100vw"
                       />
                     </div>
-                    <figcaption className="mt-3 text-xs leading-relaxed text-zinc-500">
+                    <figcaption className="mt-3 text-xs leading-relaxed text-faint">
                       {project.image.caption}
                     </figcaption>
                   </figure>
@@ -254,31 +234,24 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Secondary builds */}
-        <h3 className="mt-14 mb-6 text-sm font-semibold uppercase tracking-[0.15em] text-zinc-500">
+        <h3 className="mt-20 mb-8 text-[11px] font-medium uppercase tracking-[0.22em] text-faint">
           More builds
         </h3>
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="grid gap-10 border-t border-border-subtle pt-10 sm:grid-cols-2 sm:gap-12">
           {more.map((project) => (
-            <article
-              key={project.name}
-              className="group rounded-2xl border border-border-subtle bg-surface p-6 transition-colors hover:border-accent/30"
-            >
-              <p className="mb-3 text-xs font-medium uppercase tracking-wider text-accent/80">
+            <article key={project.name}>
+              <p className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em] text-accent">
                 {project.tag}
               </p>
-              <h4 className="text-lg font-semibold text-zinc-100 transition-colors group-hover:text-accent">
+              <h4 className="font-serif text-xl tracking-tight text-ink">
                 {project.name}
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+              <p className="mt-3 text-[14px] leading-relaxed text-muted">
                 {project.description}
               </p>
-              <ul className="mt-5 flex flex-wrap gap-2">
+              <ul className="mt-5 flex flex-wrap gap-x-3 gap-y-1">
                 {project.stack.map((tech) => (
-                  <li
-                    key={tech}
-                    className="rounded-full border border-border-subtle px-2.5 py-0.5 text-xs text-zinc-500"
-                  >
+                  <li key={tech} className="text-[12px] tracking-wide text-faint">
                     {tech}
                   </li>
                 ))}

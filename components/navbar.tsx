@@ -14,22 +14,21 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 inset-x-0 z-50 border-b border-border-subtle/80 bg-background/70 backdrop-blur-xl">
+    <header className="fixed top-0 inset-x-0 z-50 border-b border-border-subtle/60 bg-background/55 backdrop-blur-2xl">
       <nav className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
         <Link
           href="#home"
-          className="text-sm font-semibold tracking-tight text-zinc-100"
+          className="font-serif text-[15px] tracking-wide text-ink transition-colors hover:text-accent"
         >
           sdicapua<span className="text-accent">.dev</span>
         </Link>
 
-        {/* Desktop */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-9 md:flex">
           {links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm text-zinc-400 transition-colors hover:text-zinc-100"
+                className="text-[13px] tracking-wide text-muted transition-colors duration-300 hover:text-ink"
               >
                 {link.label}
               </a>
@@ -38,20 +37,19 @@ export default function Navbar() {
           <li>
             <a
               href="#contact"
-              className="rounded-full border border-border-subtle bg-surface px-4 py-1.5 text-sm font-medium text-zinc-100 transition-colors hover:border-accent/40 hover:text-accent"
+              className="rounded-md border border-border-strong px-3.5 py-1.5 text-[13px] font-medium tracking-wide text-ink transition-all duration-300 hover:border-accent/45 hover:text-accent"
             >
               Get in touch
             </a>
           </li>
         </ul>
 
-        {/* Mobile toggle */}
         <button
           type="button"
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
-          className="flex h-9 w-9 items-center justify-center rounded-md text-zinc-400 hover:text-zinc-100 md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-md text-muted transition-colors hover:text-ink md:hidden"
         >
           <svg
             className="h-5 w-5"
@@ -69,16 +67,15 @@ export default function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="border-t border-border-subtle bg-background/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-border-subtle bg-background/95 backdrop-blur-2xl md:hidden">
           <ul className="space-y-1 px-6 py-4">
             {links.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-md px-3 py-2 text-sm text-zinc-300 hover:bg-surface hover:text-zinc-100"
+                  className="block rounded-md px-3 py-2.5 text-sm text-[#d6d3cd] transition-colors hover:bg-surface hover:text-ink"
                 >
                   {link.label}
                 </a>
@@ -88,7 +85,7 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={() => setOpen(false)}
-                className="block rounded-md px-3 py-2 text-sm font-medium text-accent"
+                className="block rounded-md px-3 py-2.5 text-sm font-medium text-accent"
               >
                 Get in touch
               </a>
